@@ -56,14 +56,16 @@ nav {
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 50px;
+    justify-content: center;
+    
     background-color: #f5f5f5;
     position: relative;
 }
 
 .hero-content {
+    padding-left: 50px;
     max-width: 50%;
+    text-align: center;
 }
 
 .hero h1 {
@@ -91,9 +93,9 @@ nav {
 }
 
 .hero-image img {
+    padding-left: 100px;
     max-width: 100%;
     height: auto;
-    clip-path: ellipse(50% 30% at 50% 50%);
 }
 
 .login-container {
