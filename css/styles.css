@@ -85,6 +85,7 @@ button:hover,
     padding-left: 100px;
     max-width: 100%;
     height: auto;
+    width: auto;
 }
 
 .login-container {
