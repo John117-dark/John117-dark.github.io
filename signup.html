@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Registro</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="image-section">
+            <img src="./img/login.jpg" alt="Laptop Image">
+            
+        </div>
+        <div class="form-section">
+            <h1>Registro</h1>
+            <form id="signupForm">
+                <label for="email">Email:</label>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Introduce tu email" required>
+                </div>
+
+                <label for="password">Contraseña:</label>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
+                </div>
+
+                <label for="confirm-password">Confirmar Contraseña:</label>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma tu contraseña" required>
+                </div>
+
+                <button type="submit">Sign-Up</button>
+
+                <p>Ya tienes cuenta? <a href="login.html">Inicia Sesión</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
