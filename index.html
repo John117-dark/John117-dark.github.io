@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>SmartTech</title>
-    <link rel="stylesheet" href="./css/styles.css">
+
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        .hero-content h1 { font-size: 2em; }
+    </style>
+
+    <link rel="stylesheet" href="./css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="./css/styles.css"></noscript>
+
     <link rel="preload" href="./img/land-resize.webp" as="image">
 </head>
 <body>
@@ -30,9 +38,12 @@
             <a href="#" class="btn">Explorar categorías</a>
         </div>
         <div class="hero-image">
-            <img src="./img/land-resize.webp" alt="Laptop showcasing the latest tech devices">
+            <img srcset="./img/land-resize-small.webp 600w, ./img/land-resize.webp 1200w"
+                 sizes="(max-width: 600px) 600px, 1200px"
+                 src="./img/land-resize.webp" alt="Laptop showcasing the latest tech devices" loading="lazy">
         </div>
     </section>
+
+    <script src="./js/script.js" defer></script>
 </body>
 </html>
-
