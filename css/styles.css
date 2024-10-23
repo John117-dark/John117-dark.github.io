@@ -169,3 +169,30 @@ a:hover {
     cursor: pointer;
     font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 100%;
+        margin: 50px 15px;
+    }
+
+    .image-section {
+        width: 100%;
+        height: 200px; 
+    }
+
+    .form-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem; 
+    }
+
+    input, button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
