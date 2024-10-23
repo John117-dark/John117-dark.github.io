@@ -170,8 +170,40 @@ a:hover {
     font-size: 1rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-content, .form-section {
+        max-width: 90%;
+        padding: 0;
+    }
+
     .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .login-container {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .image-section, .form-section {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1, .form-section h1 {
         font-size: 1.8rem;
     }
 
@@ -179,21 +211,13 @@ a:hover {
         font-size: 0.9rem;
     }
 
-    .nav-links {
-        gap: 8px;
-    }
-
-    .nav-links li a {
+    .nav-links li a, .login-btn button {
         font-size: 0.9rem;
         padding: 8px 12px;
     }
 
-    .login-btn button {
-        padding: 8px 15px; 
-    }
-
-    .back-to-home button {
-        font-size: 0.9rem;
+    button {
+        font-size: 1rem;
         padding: 8px 15px;
     }
 }
