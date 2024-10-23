@@ -203,7 +203,6 @@ a:hover {
 
 @media (max-width: 768px) {
     .nav-links {
-        padding-top: 10px;
         display: none;
         position: absolute;
         top: 70px;
@@ -218,6 +217,7 @@ a:hover {
         flex-direction: column;
         gap: 10px;
         padding: 20px;
+        margin-top: 10px;
     }
 
     .burger {
