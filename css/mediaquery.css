@@ -19,9 +19,7 @@
         font-size: 1rem;
         padding: 10px;
     }
-}
 
-@media (max-width: 768px) {
     .hero-image{
         display: none;
     }
@@ -29,9 +27,7 @@
     .hero-content{
         max-width: 100%;
     }
-}
 
-@media (max-width: 768px) {
     .nav-links {
         display: none;
         position: absolute;
