@@ -176,7 +176,6 @@ a:hover {
     font-size: 1rem;
 }
 
-/* Burger Menu (Hidden by default) */
 .burger {
     display: none;
     flex-direction: column;
@@ -192,7 +191,6 @@ a:hover {
     transition: all 0.3s ease;
 }
 
-/* When the burger menu is toggled */
 .burger.toggle span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -203,10 +201,9 @@ a:hover {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Responsive Styles for Burger Menu */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Hide nav links initially */
+        display: none;
         position: absolute;
         top: 70px;
         right: 50px;
@@ -223,10 +220,9 @@ a:hover {
     }
 
     .burger {
-        display: flex; /* Show the burger icon */
+        display: flex;
     }
 
-    /* Toggle the navigation menu when burger is clicked */
     .nav-active {
         display: block;
     }
