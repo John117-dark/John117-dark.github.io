@@ -174,4 +174,8 @@ a:hover {
     .hero-image{
         display: none;
     }
+
+    .hero-content{
+        max-width: 100%;
+    }
 }
