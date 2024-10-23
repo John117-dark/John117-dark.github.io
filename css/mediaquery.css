@@ -11,6 +11,9 @@
     .hero-image img{
         display: none;
     }
+    div.hero-image{
+        display: none;
+    }
 
     .form-section {
         width: 100%;
