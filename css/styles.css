@@ -203,6 +203,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .nav-links {
+        padding-top: 10px;
         display: none;
         position: absolute;
         top: 70px;
