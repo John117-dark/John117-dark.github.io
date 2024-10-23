@@ -170,54 +170,47 @@ a:hover {
     font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 0 10px;
+@media (min-width: 768px) {
+    header {
+        padding: 20px 50px;
     }
 
     .nav-links {
-        flex-direction: column;
+        display: flex;
+        gap: 20px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        text-align: left;
     }
 
-    .hero-content, .form-section {
-        max-width: 90%;
-        padding: 0;
+    .hero-content {
+        flex: 1;
+        padding: 0 30px;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .login-container {
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .image-section, .form-section {
-        width: 100%;
-        padding: 20px;
+    .hero-image img {
+        max-width: 500px;
     }
 }
 
-@media (max-width: 480px) {
-    .hero h1, .form-section h1 {
-        font-size: 1.8rem;
+@media (min-width: 1024px) {
+    header {
+        padding: 20px 100px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
     }
 
     .hero p {
-        font-size: 0.9rem;
-    }
-
-    .nav-links li a, .login-btn button {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 8px 15px;
+        font-size: 1.2rem;
     }
 }
