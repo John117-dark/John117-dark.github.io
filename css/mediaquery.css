@@ -8,6 +8,9 @@
     .image-section {
         display: none;
     }
+    .hero-image img{
+        display: none;
+    }
 
     .form-section {
         width: 100%;
