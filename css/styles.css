@@ -220,22 +220,26 @@ a:hover {
 .categories-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 30px;
     justify-items: center;
     align-items: center;
 }
 
 .category {
     position: relative;
-    width: 250px;
-    height: 150px;
-    border-radius: 15px;
+    width: 350px;
+    height: 200px;
     overflow: hidden;
     border: 5px solid transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f5f5f5;
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.05); 
 }
 
 .category img {
@@ -243,27 +247,28 @@ a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 15px;
     filter: brightness(0.85);
 }
 
 .label {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
     font-size: 1.5rem;
     font-weight: bold;
-    transform: rotate(-90deg);
-    transform-origin: top left;
+    transform: translateY(-50%) rotate(-90deg); 
+    transform-origin: left center;
     text-transform: uppercase;
+    z-index: 2;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
+    letter-spacing: 2px;
 }
 
 .work {
@@ -281,4 +286,3 @@ a:hover {
 .gaming {
     border-color: #f3e5f5; /* Light Purple */
 }
-

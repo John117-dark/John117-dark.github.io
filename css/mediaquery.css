@@ -56,12 +56,12 @@
     .categories-container {
         grid-template-columns: 1fr;
     }
-    
+
     .category {
-        max-width: 100%;
+        width: 90%; 
         height: auto;
     }
-    
+
     .category img {
         height: auto;
     }
