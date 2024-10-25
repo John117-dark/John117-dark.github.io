@@ -52,4 +52,14 @@
     .nav-active {
         display: block;
     }
+
+    .categories-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .category {
+        max-width: 100%;
+    }
+    
+    
 }
