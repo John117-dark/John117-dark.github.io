@@ -227,16 +227,24 @@ a:hover {
 
 .category {
     position: relative;
-    overflow: hidden;
+    width: 250px;
+    height: 150px;
     border-radius: 15px;
+    overflow: hidden;
+    border: 5px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
 }
 
 .category img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
     border-radius: 15px;
+    filter: brightness(0.85);
 }
 
 .label {
@@ -251,4 +259,26 @@ a:hover {
     transform: rotate(-90deg);
     transform-origin: top left;
     text-transform: uppercase;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
 }
+
+.work {
+    border-color: #283593; /* Dark Blue */
+}
+
+.desktop {
+    border-color: #8e24aa; /* Purple */
+}
+
+.all-uses {
+    border-color: #455a64; /* Dark Gray */
+}
+
+.gaming {
+    border-color: #f3e5f5; /* Light Purple */
+}
+
