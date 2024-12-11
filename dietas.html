@@ -6,6 +6,7 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 </head>
 <body>
     
@@ -90,86 +91,84 @@
                 </nav>
             </header>
             <!-- END HEADER -->
-            <!-- ROW STATS -->
-            <div class="row mx-4 px-4 my-4">
-
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6>
-                                <i class="bi bi-wallet"></i>
-                                &nbsp;INGRESOS MENSUALES
-                            </h6>
-                            <h6 class="h3 text-center">$30000.00</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6>
-                                <i class="bi bi-people"></i>
-                                &nbsp;TOTAL CLIENTES
-                            </h6>
-                            <h6 class="h3 text-center">52</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6>
-                                <i class="bi bi-egg"></i>
-                                &nbsp;TOTAL DIETAS
-                            </h6>
-                            <h6 class="h3 text-center">56</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6>
-                                <i class="bi bi-wallet"></i>
-                                &nbsp;DEUDORES
-                            </h6>
-                            <h6 class="h3 text-center">$2000.00</h6>
-                        </div>
-                    </div>
+            <!-- TITLE SECTION -->
+            <div class="mx-4 d-flex justify-content-between">
+                <h1 class="h4">Dietas</h1>
+                <div>
+                    <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalAdd">Agregar</button>
                 </div>
 
             </div>
-            <!-- END ROW STATS -->
-            <!-- CHARTS -->
-            <div class="row mx-4 px-4 my-4">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-header">INGRESOS MENSUALES</div>
-                        <div class="card-body">
-                            <canvas id="chartIngresos"></canvas>
+            <!-- END TITLE SECTION -->
+            <section class="p-4 container">
+                <div class="row">
+                    
+                    <div class="col-3 mt-2 p-2">
+                        <div class="card">
+                            <img src="./img/dieta1.png" height="150px"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Pechuga Pollo</h5>
+                              <p class="card-text">Pechuga al vapor con ensalada.</p>
+                              <a href="#" class="btn btn-dark w-100">Ver dieta</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-header">DIETAS POR CATEGORÍA</div>
-                        <div class="card-body">
-                            <canvas id="chartCategorias"></canvas>
+                    <div class="col-3 mt-2 p-2">
+                        <div class="card" >
+                            <img src="./img/dieta1.png" height="150px"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Pechuga Pollo</h5>
+                              <p class="card-text">Pechuga al vapor con ensalada.</p>
+                              <a href="#" class="btn btn-dark w-100">Ver dieta</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-3 mt-2 p-2">
+                        <div class="card" >
+                            <img src="./img/dieta1.png" height="150px"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Pechuga Pollo</h5>
+                              <p class="card-text">Pechuga al vapor con ensalada.</p>
+                              <a href="#" class="btn btn-dark w-100">Ver dieta</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 mt-2 p-2">
+                        <div class="card" >
+                            <img src="./img/dieta1.png" height="150px"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Pechuga Pollo</h5>
+                              <p class="card-text">Pechuga al vapor con ensalada.</p>
+                              <a href="#" class="btn btn-dark w-100">Ver dieta</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 mt-2 p-2">
+                        <div class="card" >
+                            <img src="./img/dieta1.png" height="150px"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Pechuga Pollo</h5>
+                              <p class="card-text">Pechuga al vapor con ensalada.</p>
+                              <a href="#" class="btn btn-dark w-100">Ver dieta</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
                 </div>
-            </div>
-            <!-- END CHARTS -->
+
+            </section>
             
         </main>
 
     </div>
   
-    
-   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./js/index.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script  src="./js/users.js"></script>
 </body>
 </html>
