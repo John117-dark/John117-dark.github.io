@@ -70,92 +70,157 @@
 
     </div>
   
-    <div class="modal fade modal-lg" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- MODAL FOR ADDING ORDERS -->
+    <div class="modal fade modal-lg" id="modalAddOrder" tabindex="-1" aria-labelledby="addOrderModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Producto</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addOrderModalLabel">Crear Nueva Orden</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="orderForm" method="post" class="needs-validation" novalidate>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="productSelect" class="form-label">Seleccionar Producto</label>
+                            <select id="productSelect" name="product_id" class="form-control" required>
+                                <option value="">Seleccione un producto</option>
+                                <!-- Products will be dynamically populated here -->
+                            </select>
+                            <div class="invalid-feedback">Por favor seleccione un producto</div>
+                        </div>
+                    </div>
+                    
+                    <div id="productDetails" class="row" style="display:none;">
+                        <div class="col-6">
+                            <img id="productImage" src="" class="img-fluid" alt="Imagen del producto">
+                        </div>
+                        <div class="col-6">
+                            <p><strong>Descripción:</strong> <span id="productDescription"></span></p>
+                            <p><strong>Precio:</strong> $<span id="productPrice"></span></p>
+                            <p><strong>Stock Disponible:</strong> <span id="productStock"></span></p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 mb-3">
+                            <label for="cantidad" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" id="cantidad" name="cantidad" 
+                                   min="1" required>
+                            <div class="invalid-feedback">Ingrese una cantidad válida</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-dark" id="btnCreateOrder">Crear Orden</button>
+                </div>
+            </form>
         </div>
-        <form action="./php/add-product.php" enctype="multipart/form-data" method="post"  class="needs-validation" novalidate id="form">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-6 mb-2">
-                        <label for="">Nombre:</label>
-                        <input name="txtName" id="" required type="text" class="form-control" placeholder="Inserta el nombre">
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                    <div class="col-6 mb-2">
-                        <label for="">Descripcion:</label>
-                        <input name="txtDescription" required type="text" class="form-control" placeholder="Inserta la descripción">
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6 mb-2">
-                        <label for="">Precio</label>
-                        <input name="txtPrecio" required  type="number" class="form-control" placeholder="Inserta el precio" >
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                    <div class="col-6 mb-2">
-                        <label for="">Imágen</label>
-                        <input accept="image/*" name="txtFile" required type="file" class="form-control" >
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                    
-                </div>
-                <div class="row">
-                    <div class="col-6 mb-2">
-                        <label for="">Categoria</label>
-                        <select name="txtCategoria" class="form-control" id="">
-                        <?php   
-                    while($fila2 = mysqli_fetch_array($res_cat)){
-                ?>
-                <option value="<?php echo $fila2['categoria_id'] ?>"><?php echo $fila2['nombre'] ?></option>
-                    <?php } ?> 
-                        </select>
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                    <div class="col-6 mb-2">
-                        <label for="">Marca</label>
-                        <input name="txtMarca" required  type="text" class="form-control" placeholder="Inserta la marca" >
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6 mb-2">
-                        <label for="">Stock</label>
-                        <input name="txtStock" required  type="number" class="form-control" placeholder="Inserta el Stock" >
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                    <div class="col-6 mb-2">
-                        <label for="">Modelo</label>
-                        <input name="txtModelo" required type="text" class="form-control" placeholder="Inserta el modelo">
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Datos no validos</div>
-                    </div>
-                    
-                </div>
-               
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-dark" id="btnSave">Guardar</button>
-            </div>
-        </form>
-      </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const productSelect = document.getElementById('productSelect');
+    const productDetails = document.getElementById('productDetails');
+    const productImage = document.getElementById('productImage');
+    const productDescription = document.getElementById('productDescription');
+    const productPrice = document.getElementById('productPrice');
+    const productStock = document.getElementById('productStock');
+    const orderForm = document.getElementById('orderForm');
+    const cantidad = document.getElementById('cantidad');
+
+    // Fetch and populate products
+    function loadProducts() {
+        fetch('./php/get_products.php')
+            .then(response => response.json())
+            .then(products => {
+                productSelect.innerHTML = '<option value="">Seleccione un producto</option>';
+                products.forEach(product => {
+                    const option = document.createElement('option');
+                    option.value = product.product_id;
+                    option.textContent = product.nombre;
+                    productSelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire('Error', 'No se pudieron cargar los productos', 'error');
+            });
+    }
+
+    // Product selection event
+    productSelect.addEventListener('change', function() {
+        const selectedProductId = this.value;
+        
+        if (selectedProductId) {
+            fetch(`./php/get_product_details.php?product_id=${selectedProductId}`)
+                .then(response => response.json())
+                .then(product => {
+                    productImage.src = product.img; // Now uses the full path from PHP
+                    productDescription.textContent = product.descripcion;
+                    productPrice.textContent = product.precio;
+                    productStock.textContent = product.stock;
+                    
+                    // Set max quantity to available stock
+                    cantidad.max = product.stock;
+                    cantidad.min = 1;
+                    
+                    productDetails.style.display = 'flex';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire('Error', 'No se pudieron cargar los detalles del producto', 'error');
+                });
+        } else {
+            productDetails.style.display = 'none';
+        }
+    });
+
+    // Order submission
+    orderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Client-side validation
+        if (!this.checkValidity()) {
+            e.stopPropagation();
+            this.classList.add('was-validated');
+            return;
+        }
+
+        const formData = new FormData(this);
+
+        fetch('./php/add-order.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                Swal.fire('Éxito', data.message, 'success')
+                    .then(() => {
+                        // Reload page or update orders list
+                        location.reload();
+                    });
+            } else {
+                Swal.fire('Error', data.message, 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire('Error', 'Ocurrió un error al crear la orden', 'error');
+        });
+    });
+
+    // Initial load of products
+    loadProducts();
+});
+</script>
+
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-    <script  src="./js/users.js"></script>
 </body>
 </html>

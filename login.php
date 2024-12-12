@@ -34,10 +34,10 @@
 
                 <button type="submit">Log-In</button>
 
-                <p>No tienes cuenta? <a href="signup.html">Regístrate</a></p>
+                <p>No tienes cuenta? <a href="signup.php">Regístrate</a></p>
             </form>
             <div class="back-to-home">
-                <a href="index.html"><button type="button">Volver al Inicio</button></a>
+                <a href="main.html"><button type="button">Volver al Inicio</button></a>
             </div>
         </div>
     </div>
