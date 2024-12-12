@@ -27,7 +27,7 @@ new Chart(ctx, {
 
 const ctx1 = document.getElementById('chartCateg');
 new Chart(ctx1, {
-  type: 'pie',
+  type: 'bars',
   data: {
     labels: ['Work', 'Desktop', 'All Uses', 'Gaming'],
     datasets: [{

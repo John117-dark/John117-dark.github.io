@@ -38,29 +38,42 @@ create table products(
 	CONSTRAINT fk_proveedor foreign key (proveedor_id) references proveedores(proveedor_id),
 	CONSTRAINT fk_cateogrie FOREIGN KEY (categoria_id) REFERENCES categorias(categoria_id)
 );
+
 select * from products;
 select * from products where categoria_id = 1 order by product_id desc;
 insert into products (nombre,descripcion,precio,stock,marca,modelo,img,categoria_id) 
 	values ('Lapotp HP','Laptop marca HP',7999.99,10,'HP','14-dk-1000 Series','default.jpg',1);
-update users set 
-img 
-where id=1"
+
+drop table if exists ordenes;
+create table ordenes(
+	orden_id integer not null auto_increment,
+	usuario_id int,
+	product_id int,
+	fecha date,
+	estado varchar(15),
+	total decimal(10,2),
+	primary key (orden_id),
+	CONSTRAINT fk_users FOREIGN KEY (usuario_id) REFERENCES users(id)  ON DELETE cascade
+	CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES products(product_id)  ON DELETE CASCADE
+
+);
 
 CREATE TRIGGER Restar_Stock
-AFTER INSERT ON VENTA
+AFTER INSERT ON ordenes
 FOR EACH ROW
 BEGIN
-    UPDATE MEDICAMENTO
-    SET existencia = existencia - NEW.CANTIDAD
-    WHERE ID_MEDIC = NEW.ID_PRODUCTO;
+    UPDATE products 
+    SET stock = stock - NEW.stock
+    WHERE product_id = NEW.product_id;
 END 
+
 create trigger Sumar_Stock
-AFTER INSERT ON PROVEEDOR
+AFTER INSERT ON ordenes
 FOR EACH ROW
 BEGIN
- UPDATE MEDICAMENTO
-    SET existencia = existencia + NEW.CANTIDAD
-    WHERE ID_MEDIC = NEW.ID_PRODUCTO;
+ UPDATE products 
+    SET stock = stock + NEW.stock
+    WHERE product_id = NEW.product_id;
 end
 
 drop table if exists categorias;
@@ -89,16 +102,8 @@ create table proveedores(
 	primary key (proveedor_id)
 );
 
-drop table if exists ordenes;
-create table ordenes(
-	orden_id integer not null auto_increment,
-	usuario_id int,
-	fecha date,
-	estado varchar(15),
-	total decimal(10,2),
-	primary key (orden_id),
-	CONSTRAINT fk_users FOREIGN KEY (usuario_id) REFERENCES users(id)  ON DELETE CASCADE
-);
+
+
 insert into ordenes (usuario_id, fecha, estado, total)
 values (9, '2024/12/08', 'Pendiente', 6999);
 	
@@ -110,7 +115,6 @@ create table detalles_orden(
 	cantidad double,
 	primary key (detalle_id),
 	CONSTRAINT fk_orden FOREIGN KEY (orden_id) REFERENCES ordenes(orden_id)  ON DELETE CASCADE,
-	CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES products(product_id)  ON DELETE CASCADE
 
 );
 
